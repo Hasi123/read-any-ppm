@@ -11,6 +11,8 @@ License: GNU GPL v3
 #include "PPMReader.h"
 #include "Arduino.h"
 
+int PPMReader::ppm[PMM_CHANNEL_COUNT];
+
 PPMReader::PPMReader(int pin, int interrupt)
 {
     pinMode(_pin, INPUT);

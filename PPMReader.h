@@ -27,6 +27,4 @@ class PPMReader
     int _interrupt;
 };
 
-int PPMReader::ppm[PMM_CHANNEL_COUNT];
-
 #endif
