@@ -30,7 +30,6 @@ void loop()
 {
   static int count;
   while (ppmReader.get(count) != 0) { //print out the servo values
-      rcCommand[count] = ppmReader.get(count) - 1500;
       Serial.print(ppmReader.get(count));
       Serial.print("  ");
       count++;
