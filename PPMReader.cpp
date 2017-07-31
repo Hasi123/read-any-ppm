@@ -11,10 +11,13 @@ License: GNU GPL v3
 #include "PPMReader.h"
 #include "Arduino.h"
 
-int PPMReader::ppm[PMM_CHANNEL_COUNT];
+volatile int PPMReader::ppm[PMM_CHANNEL_COUNT];
 
 PPMReader::PPMReader(int pin, int interrupt)
 {
+    _pin = pin;
+    _interrupt = interrupt;
+
     pinMode(_pin, INPUT);
     attachInterrupt(_interrupt, PPMReader::handler, CHANGE);
 }
@@ -22,6 +25,14 @@ PPMReader::PPMReader(int pin, int interrupt)
 int PPMReader::get(uint8_t channel)
 {
     return ppm[channel];
+}
+
+void PPMReader::start(void) {
+    attachInterrupt(_interrupt, PPMReader::handler, CHANGE);
+}
+
+void PPMReader::stop(void) {
+    detachInterrupt(_interrupt);
 }
 
 static void PPMReader::handler()

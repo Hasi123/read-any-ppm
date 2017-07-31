@@ -21,7 +21,9 @@ class PPMReader
     PPMReader(int pin, int interrupt);
     int get(uint8_t channel);
     static void handler();
-    static int ppm[PMM_CHANNEL_COUNT];
+    volatile static int ppm[PMM_CHANNEL_COUNT];
+    void start(void);
+    void stop(void);
   private:
     int _pin;
     int _interrupt;

@@ -28,11 +28,18 @@ void setup()
 
 void loop()
 {
-  Serial.println(ppmReader.get(0));
+  static int count;
+  while (ppmReader.get(count) != 0) { //print out the servo values
+      rcCommand[count] = ppmReader.get(count) - 1500;
+      Serial.print(ppmReader.get(count));
+      Serial.print("  ");
+      count++;
+  }
+  count = 0;
   delay(500);
 }
 ```
 
 ## License
 
-This code is licensed under _GNU GENERAL PUBLIC LICENSE Version 3_ and is based on [https://github.com/Hasi123/read-any-ppm](https://github.com/Hasi123/read-any-ppm) and [https://github.com/Hasi123/read-any-ppm](https://github.com/Hasi123/read-any-ppm) 
+This code is licensed under _GNU GENERAL PUBLIC LICENSE Version 3_ and is based on [https://github.com/Hasi123/read-any-ppm](https://github.com/Hasi123/read-any-ppm) and [https://code.google.com/archive/p/read-any-ppm/](https://code.google.com/archive/p/read-any-ppm/) 
