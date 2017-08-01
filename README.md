@@ -11,6 +11,11 @@ This library reads and decodes PPM (CPPM) RC signal from a radio receiver.
 * Requires a pin with hardware interrupt avaliable. That mean, on majority of Arduino boards, it will be limitet to either Pin2/Interrupt0 or Pin3/Interrupt1
 * It uses `micros`, so any code that alters `Timer0` and breaks `micros` function, will also break this code
 
+## Installation
+
+1. Download from GitHub as ZIP
+1. Using **Arduino IDE** use `Sketch` -> `Include Library` -> `Add .ZIP Library` and select downloaded ZIP
+
 ## Usage
 
 On Arduino UNO/Pro Mini with PPM signal attached to pin 2 (interrupt 0), example usage that prints PPM channel 1 over serial port will look like this:
