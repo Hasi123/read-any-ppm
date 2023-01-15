@@ -4,6 +4,11 @@ Reading of only 1 signal is supported at the moment. Do not try to call attachCP
 
 If you need higher resolution than what micros() provides, uncomment #define CPPM_USE_TIMER1 in the header file.
 
+## Installation
+
+To install click the DOWNLOAD ZIP button and extract the folder to your arduinosketchfolder/libraries/ folder. You may need to create the libraries subfolder if its your first library. Restart the IDE.
+Check this guide if unsuccesful: https://learn.adafruit.com/adafruit-all-about-arduino-libraries-install-use/installing-a-library
+
 ## Changelog
 - V0.2 now out. increased resolution to 0.5us on 16MHz & to 1us on 8MHz by using timer1 instead of micros()
 - V0.3 Bugfixes
