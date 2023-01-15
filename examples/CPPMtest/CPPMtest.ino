@@ -1,4 +1,4 @@
-#include "CPPM.h"
+#include <CPPM.h>
 
 void setup() {
   attachCPPM(A0, 8);
